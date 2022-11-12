@@ -1,0 +1,26 @@
+import React, { Suspense } from "react";
+import TodosList from "./(users)/todos/TodosList";
+
+function Home() {
+  return (
+    <div>
+      <Suspense fallback={<p className="text-red-500">Loading the Todos....</p>}>
+        <h1>Loading Todos</h1>
+        <div className="flex space-x-2">
+          {/*@tsignore*/}
+          <TodosList />
+        </div>
+      </Suspense>
+
+      <Suspense fallback={<p>Loading the Shopping trolley....</p>}>
+        <h1>Loading Shopping trolley</h1>
+        <div className="flex space-x-2">
+          {/*@tsignore*/}
+          <TodosList />
+        </div>
+      </Suspense>
+    </div>
+  );
+}
+
+export default Home;
